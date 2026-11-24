@@ -28,6 +28,21 @@ proof in the campaign log; never invent IDs or silently substitute. OpenCode mod
 worktree and a verified CLI, as Orca's help specifies. The orchestrator reviews worker diffs, and the next browser QA
 round reviews its own fixes.
 
+### Judgment and promotion
+
+When a general fix spans callers or modules, or a task needs a design or library choice, cheap workers stop and report
+cause, callers, evidence and what they checked without attempting the design. The orchestrator researches and designs it
+itself or assigns it to a stronger model. Choices include GPT-6.1 Terra, Claude Sonnet 5.5, Claude Opus 5.5, Astra and
+Fable, at the effort it judges right. It may choose Astra or Fable itself; log the model and why.
+
+Where the agent supports it, promote the same worker in place to a stronger model in the same family to retain context:
+GPT to higher GPT, Claude to higher Claude, or Antigravity to higher Antigravity. Do not do this for OpenCode workers.
+Orca has no model-switch command: type the agent's own switch command, such as `/model` in Codex or Claude, into the
+worker terminal and confirm the effective model on its screen. If Orca refuses the input or the agent cannot switch,
+start a stronger worker in the same worktree with the brief and cheap worker's report.
+Either way, tell the stronger model in a message or brief that it is authorized to design that fix, so it does
+not stop again.
+
 ## Optional seats
 
 Invoke Scipio, the red-team tester, when risk warrants it, such as before release or after money, auth or data-handling

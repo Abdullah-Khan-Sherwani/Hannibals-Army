@@ -94,7 +94,9 @@ browser QA round. See [DOCTRINE.md](DOCTRINE.md) for the complete rules.
 The default first choices are OpenCode 2 with DeepSeek free tier and Antigravity with Hydrogen; second choices are
 Claude Haiku 5.5 and the latest GPT Luna. Use the highest supported reasoning effort. Session instructions override
 the lineup; record exact model IDs from launch proof and never silently substitute. OpenCode model selection needs an
-existing worktree and a verified CLI. The strong orchestrator designs and reviews; cheap workers do bounded tasks.
+existing worktree and a verified CLI. Cheap workers stop and report when a general fix or design or library choice
+needs judgment; the orchestrator designs it or assigns a stronger model. Where supported, it can promote the same
+worker in place and verify the effective model; otherwise a stronger worker continues from its report.
 
 Scipio is an optional red-team tester for higher-risk changes. Hasdrubal and Mago are optional sub-project leads only
 when independent sub-projects each need an army and the orchestrator is measurably blocked. See the doctrine for limits.
@@ -172,6 +174,9 @@ end-to-end campaign have not been verified as part of this update. Historical re
 ## FAQ
 
 **Do I need several providers?**   No. Choose Solo or Army for the task; session instructions can override the default lineup.
+
+**Who makes design and library choices?**   The orchestrator decides or assigns a stronger model, logging its choice.
+Cheap workers report evidence rather than designing general fixes.
 
 **Is this too much for one feature?**   Solo mode keeps a small task with one orchestrator; use workers when parallelism
 or a long run helps.
